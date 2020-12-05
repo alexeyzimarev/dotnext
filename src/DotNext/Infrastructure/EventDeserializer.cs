@@ -1,6 +1,6 @@
 using System;
 using System.Text.Json;
-using EventSourcing.Infrastructure;
+using DotNext.Lib;
 using EventStore.Client;
 
 namespace DotNext.Infrastructure {

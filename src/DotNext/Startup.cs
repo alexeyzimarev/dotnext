@@ -1,7 +1,13 @@
+using System;
+using DotNext.Application;
+using DotNext.Infrastructure;
+using DotNext.Lib;
+using EventStore.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Serilog;
 
@@ -12,7 +18,19 @@ namespace DotNext {
         IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services) {
+            AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
+            
             services.AddControllers();
+
+            services.AddSingleton(
+                ctx
+                    => ConfigureEventStore(
+                        Configuration["EventStore:ConnectionString"],
+                        ctx.GetService<ILoggerFactory>()
+                    )
+            );
+            services.AddSingleton<IAggregateStore, AggregateStore>();
+            services.AddSingleton<BookingCommandService>();
 
             services.AddSwaggerGen(
                 c
@@ -33,6 +51,13 @@ namespace DotNext {
             app.UseSerilogRequestLogging();
             app.UseRouting();
             app.UseEndpoints(endpoints => endpoints.MapControllers());
+        }
+
+        static EventStoreClient ConfigureEventStore(string connectionString, ILoggerFactory loggerFactory) {
+            var settings = EventStoreClientSettings.Create(connectionString);
+            settings.ConnectionName = "bookingApp";
+            settings.LoggerFactory  = loggerFactory;
+            return new EventStoreClient(settings);
         }
     }
 }

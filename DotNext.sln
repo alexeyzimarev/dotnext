@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNext", "src\DotNext\DotN
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNext.Lib", "src\DotNext.Lib\DotNext.Lib.csproj", "{DB5F4477-3CFE-4A69-BA71-F6BAE46F95B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNext.Domain", "src\DotNext.Domain\DotNext.Domain.csproj", "{734A6C40-B2C6-4F3C-BA68-85DCE114D463}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{DB5F4477-3CFE-4A69-BA71-F6BAE46F95B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB5F4477-3CFE-4A69-BA71-F6BAE46F95B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB5F4477-3CFE-4A69-BA71-F6BAE46F95B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{734A6C40-B2C6-4F3C-BA68-85DCE114D463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{734A6C40-B2C6-4F3C-BA68-85DCE114D463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{734A6C40-B2C6-4F3C-BA68-85DCE114D463}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{734A6C40-B2C6-4F3C-BA68-85DCE114D463}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,7 +1,5 @@
-namespace EventSourcing.Infrastructure
-{
-    public class EventMetadata
-    {
+namespace DotNext.Lib {
+    public class EventMetadata {
         public string ClrType { get; set; }
     }
 }

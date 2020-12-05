@@ -3,7 +3,37 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/docker-compose.yml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext.Domain/Booking.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext.Domain/BookingEvents.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext.Domain/DomainException.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext.Domain/RoomId.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext.Domain/StayPeriod.cs">
           <value>
             <set />
           </value>
@@ -13,7 +43,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext.Lib/EventMetadata.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/DotNext.Lib/IAggregateStore.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext/Api/BookingCommandApi.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext/Application/ApplicationException.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext/Application/BookingCommandService.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext/Application/Commands/BookingCommands.cs">
           <value>
             <set />
           </value>
@@ -24,6 +79,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/DotNext/Infrastructure/EventDeserializer.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext/Startup.cs">
           <value>
             <set />
           </value>

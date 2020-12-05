@@ -3,7 +3,6 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using DotNext.Lib;
-using EventSourcing.Infrastructure;
 using EventStore.Client;
 
 namespace DotNext.Infrastructure {
@@ -53,6 +52,16 @@ namespace DotNext.Infrastructure {
             aggregate!.Load(events);
 
             return aggregate;
+        }
+
+        public async Task<bool> Exists<T>(string id) {
+            if (id == null) throw new ArgumentNullException(nameof(id));
+            
+            var stream    = GetStreamName<T>(id);
+            var read      = _client.ReadStreamAsync(Direction.Forwards, stream, StreamPosition.Start, 1);
+            var readState = await read.ReadState;
+
+            return readState != ReadState.StreamNotFound;
         }
 
         static string GetStreamName<T>(string entityId) => $"{typeof(T).Name}-{entityId}";

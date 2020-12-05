@@ -16,6 +16,7 @@ services:
       EVENTSTORE_ENABLE_EXTERNAL_TCP: 'true'
       EVENTSTORE_RUN_PROJECTIONS: all
       EVENTSTORE_START_STANDARD_PROJECTIONS: "true"
+      EVENTSTORE_ENABLE_ATOM_PUB_OVER_HTTP: "true"
 
   mongo:
     container_name: dotnext-mongo
