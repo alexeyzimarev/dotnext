@@ -6,6 +6,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using DotNext.Lib;
 using MongoDB.Bson.Serialization;
+using MongoDB.Driver;
+using MongoDB.Driver.Core.Misc;
+using Serilog;
 
 namespace DotNext.Infrastructure.MongoDb
 {
@@ -13,11 +16,6 @@ namespace DotNext.Infrastructure.MongoDb
 
     public static class MongoCollectionExtensions
     {
-        static MongoCollectionExtensions() {
-            if (!BsonClassMap.IsClassMapRegistered(typeof(Document)))
-                Log.Warn("Please register conventions on your composition root: `MongoConventions.RegisterAbaxConventions();`");
-        }
-
         public static IMongoCollection<T> GetDocumentCollection<T>(this IMongoDatabase database, MongoCollectionName collectionName = null)
             where T : Document
             => GetDocumentCollection<T>(database, collectionName ?? MongoCollectionName.For<T>(), null);
@@ -139,7 +137,7 @@ namespace DotNext.Infrastructure.MongoDb
         /// <summary>
         /// Replaces the document and by default inserts a new one if no matching document by id is found.
         /// </summary>
-        public static async Task<ReplaceResult> ReplaceDocument<T>(
+        public static async Task ReplaceDocument<T>(
             this IMongoCollection<T> collection,
             T document,
             Action<ReplaceOptions> configure,
@@ -157,14 +155,12 @@ namespace DotNext.Infrastructure.MongoDb
                 options,
                 cancellationToken
             );
-
-            return result.ModifiedCount == 1 ? ReplaceResult.Replaced : ReplaceResult.Inserted;
         }
 
         /// <summary>
         /// Replaces the document and by default inserts a new one if no matching document by id is found.
         /// </summary>
-        public static Task<ReplaceResult> ReplaceDocument<T>(
+        public static Task ReplaceDocument<T>(
             this IMongoCollection<T> collection,
             T document,
             CancellationToken cancellationToken = default
@@ -302,16 +298,13 @@ namespace DotNext.Infrastructure.MongoDb
         /// <summary>
         /// Updates a document and by default inserts a new one if no matching document is found.
         /// </summary>
-        public static async Task<UpdateResult> UpdateDocument<T>(
+        public static async Task UpdateDocument<T>(
             this IMongoCollection<T> collection,
             FilterDefinition<T> filter,
             UpdateDefinition<T> update,
             Action<UpdateOptions> configure,
             CancellationToken cancellationToken = default
         ) where T : Document {
-            Ensure.NotNull(filter, nameof(filter));
-            Ensure.NotNull(update, nameof(update));
-
             var options = new UpdateOptions { IsUpsert = true };
 
             configure?.Invoke(options);
@@ -322,18 +315,12 @@ namespace DotNext.Infrastructure.MongoDb
                 options,
                 cancellationToken
             );
-
-            return result.UpsertedId != null
-                ? UpdateResult.Inserted
-                : result.ModifiedCount == 1
-                    ? UpdateResult.Updated
-                    : UpdateResult.NotFound;
         }
 
         /// <summary>
         /// Updates a document and by default inserts a new one if no matching document is found.
         /// </summary>
-        public static Task<UpdateResult> UpdateDocument<T>(
+        public static Task UpdateDocument<T>(
             this IMongoCollection<T> collection,
             Func<FilterDefinitionBuilder<T>, FilterDefinition<T>> filter,
             Func<UpdateDefinitionBuilder<T>, UpdateDefinition<T>> update,
@@ -350,7 +337,7 @@ namespace DotNext.Infrastructure.MongoDb
         /// <summary>
         /// Updates a document and by default inserts a new one if no matching document is found.
         /// </summary>
-        public static Task<UpdateResult> UpdateDocument<T>(
+        public static Task UpdateDocument<T>(
             this IMongoCollection<T> collection,
             FilterDefinition<T> filter,
             UpdateDefinition<T> update,
@@ -361,7 +348,7 @@ namespace DotNext.Infrastructure.MongoDb
         /// <summary>
         /// Updates a document and by default inserts a new one if no matching document is found.
         /// </summary>
-        public static Task<UpdateResult> UpdateDocument<T>(
+        public static Task UpdateDocument<T>(
             this IMongoCollection<T> collection,
             Func<FilterDefinitionBuilder<T>, FilterDefinition<T>> filter,
             Func<UpdateDefinitionBuilder<T>, UpdateDefinition<T>> update,
@@ -377,7 +364,7 @@ namespace DotNext.Infrastructure.MongoDb
         /// <summary>
         /// Updates a document and by default inserts a new one if no matching document by id is found.
         /// </summary>
-        public static Task<UpdateResult> UpdateDocument<T>(
+        public static Task UpdateDocument<T>(
             this IMongoCollection<T> collection,
             string id,
             UpdateDefinition<T> update,
@@ -397,7 +384,7 @@ namespace DotNext.Infrastructure.MongoDb
         /// <summary>
         /// Updates a document and by default inserts a new one if no matching document by id is found.
         /// </summary>
-        public static Task<UpdateResult> UpdateDocument<T>(
+        public static Task UpdateDocument<T>(
             this IMongoCollection<T> collection,
             string id,
             Func<UpdateDefinitionBuilder<T>, UpdateDefinition<T>> update,
@@ -414,7 +401,7 @@ namespace DotNext.Infrastructure.MongoDb
         /// <summary>
         /// Updates a document and by default inserts a new one if no matching document by id is found.
         /// </summary>
-        public static Task<UpdateResult> UpdateDocument<T>(
+        public static Task UpdateDocument<T>(
             this IMongoCollection<T> collection,
             string id,
             UpdateDefinition<T> update,
@@ -425,7 +412,7 @@ namespace DotNext.Infrastructure.MongoDb
         /// <summary>
         /// Updates a document and by default inserts a new one if no matching document by id is found.
         /// </summary>
-        public static Task<UpdateResult> UpdateDocument<T>(
+        public static Task UpdateDocument<T>(
             this IMongoCollection<T> collection,
             string id,
             Func<UpdateDefinitionBuilder<T>, UpdateDefinition<T>> update,

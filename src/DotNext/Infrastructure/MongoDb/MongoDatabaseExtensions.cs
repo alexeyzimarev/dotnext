@@ -67,7 +67,7 @@ namespace DotNext.Infrastructure.MongoDb
         /// <summary>
         /// Replaces the document or inserts a new one if no matching document by id is found.
         /// </summary>
-        public static Task<ReplaceResult> StoreDocument<T>(
+        public static Task StoreDocument<T>(
             this IMongoDatabase database,
             T document,
             CancellationToken cancellationToken = default
@@ -77,7 +77,7 @@ namespace DotNext.Infrastructure.MongoDb
         /// <summary>
         /// Replaces the document or inserts a new one if no matching document by id is found.
         /// </summary>
-        public static Task<ReplaceResult> ReplaceDocument<T>(
+        public static Task ReplaceDocument<T>(
             this IMongoDatabase database,
             T document,
             CancellationToken cancellationToken = default
@@ -87,7 +87,7 @@ namespace DotNext.Infrastructure.MongoDb
         /// <summary>
         /// Replaces the document or inserts a new one if no matching document by id is found.
         /// </summary>
-        public static Task<ReplaceResult> ReplaceDocument<T>(
+        public static Task ReplaceDocument<T>(
             this IMongoDatabase database,
             T document,
             Action<ReplaceOptions> configure,
@@ -95,7 +95,7 @@ namespace DotNext.Infrastructure.MongoDb
         ) where T : Document
             => database.GetDocumentCollection<T>().ReplaceDocument(document, configure, cancellationToken);
 
-        public static Task<UpdateResult> UpdateDocument<T>(
+        public static Task UpdateDocument<T>(
             this IMongoDatabase database,
             FilterDefinition<T> filter,
             UpdateDefinition<T> update,
@@ -104,7 +104,7 @@ namespace DotNext.Infrastructure.MongoDb
         ) where T : Document
             => database.GetDocumentCollection<T>().UpdateDocument(filter, update, configure, cancellationToken);
 
-        public static Task<UpdateResult> UpdateDocument<T>(
+        public static Task UpdateDocument<T>(
             this IMongoDatabase database,
             Func<FilterDefinitionBuilder<T>, FilterDefinition<T>> filter,
             Func<UpdateDefinitionBuilder<T>, UpdateDefinition<T>> update,
@@ -113,7 +113,7 @@ namespace DotNext.Infrastructure.MongoDb
         ) where T : Document
             => database.GetDocumentCollection<T>().UpdateDocument(filter, update, configure, cancellationToken);
 
-        public static Task<UpdateResult> UpdateDocument<T>(
+        public static Task UpdateDocument<T>(
             this IMongoDatabase database,
             FilterDefinition<T> filter,
             UpdateDefinition<T> update,
@@ -121,7 +121,7 @@ namespace DotNext.Infrastructure.MongoDb
         ) where T : Document
             => database.GetDocumentCollection<T>().UpdateDocument(filter, update, cancellationToken);
 
-        public static Task<UpdateResult> UpdateDocument<T>(
+        public static Task UpdateDocument<T>(
             this IMongoDatabase database,
             Func<FilterDefinitionBuilder<T>, FilterDefinition<T>> filter,
             Func<UpdateDefinitionBuilder<T>, UpdateDefinition<T>> update,
@@ -129,7 +129,7 @@ namespace DotNext.Infrastructure.MongoDb
         ) where T : Document
             => database.GetDocumentCollection<T>().UpdateDocument(filter, update, cancellationToken);
 
-        public static Task<UpdateResult> UpdateDocument<T>(
+        public static Task UpdateDocument<T>(
             this IMongoDatabase database,
             string id,
             Func<UpdateDefinitionBuilder<T>, UpdateDefinition<T>> update,
@@ -138,7 +138,7 @@ namespace DotNext.Infrastructure.MongoDb
         ) where T : Document
             => database.GetDocumentCollection<T>().UpdateDocument(id, update, configure, cancellationToken);
 
-        public static Task<UpdateResult> UpdateDocument<T>(
+        public static Task UpdateDocument<T>(
             this IMongoDatabase database,
             string id,
             Func<UpdateDefinitionBuilder<T>, UpdateDefinition<T>> update,
@@ -146,7 +146,7 @@ namespace DotNext.Infrastructure.MongoDb
         ) where T : Document
             => database.GetDocumentCollection<T>().UpdateDocument(id, update, cancellationToken);
 
-        public static Task<UpdateResult> UpdateDocument<T>(
+        public static Task UpdateDocument<T>(
             this IMongoDatabase database,
             string id,
             UpdateDefinition<T> update,
@@ -271,7 +271,7 @@ namespace DotNext.Infrastructure.MongoDb
         ) where T : Document
             => database.GetDocumentCollection<T>(collectionName).LoadDocumentAs<T, TResult>(id, projection, cancellationToken);
 
-        public static Task<UpdateResult> UpdateDocument<T>(
+        public static Task UpdateDocument<T>(
             this IMongoDatabase database,
             string id,
             MongoCollectionName collectionName,
@@ -280,7 +280,7 @@ namespace DotNext.Infrastructure.MongoDb
         ) where T : Document
             => database.GetDocumentCollection<T>(collectionName).UpdateDocument(id, update, cancellationToken);
 
-        public static Task<UpdateResult> UpdateDocument<T>(
+        public static Task UpdateDocument<T>(
             this IMongoDatabase database,
             string id,
             MongoCollectionName collectionName,

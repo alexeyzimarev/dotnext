@@ -4,9 +4,28 @@
     <projectFile>src/DotNext/DotNext.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c373ab0-9450-4e54-ae6e-95e541c48ed2" name="Default Changelist" comment="Added some stuff and one more event">
-      <change beforePath="$PROJECT_DIR$/src/DotNext.Domain/Booking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DotNext.Domain/Booking.cs" afterDir="false" />
+    <list default="true" id="9c373ab0-9450-4e54-ae6e-95e541c48ed2" name="Default Changelist" comment="Added a new version of one event">
+      <change afterPath="$PROJECT_DIR$/src/DotNext.Lib/Checkpoint.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DotNext.Lib/ICheckpointStore.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DotNext.Lib/IEventHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DotNext/Api/GuestBookingsQueries.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoProjectionService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DotNext/Projections/GuestBookings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DotNext/Projections/GuestBookingsProjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DotNext/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DotNext/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DotNext/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DotNext/.idea/sonarIssues.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DotNext/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DotNext/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DotNext.Domain/BookingEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DotNext.Domain/BookingEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DotNext.Lib/Aggregate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DotNext.Lib/Aggregate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DotNext.Lib/EventMetadata.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DotNext.Lib/EventMetadata.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DotNext/DotNext.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/DotNext/DotNext.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoCheckpointStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoCheckpointStore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoCollectionExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoCollectionExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoCollectionName.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoCollectionName.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoDatabaseExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoDatabaseExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoDefaults.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoDefaults.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DotNext/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/DotNext/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DotNext/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/DotNext/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,27 +37,24 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5C2D0A65-A27E-43D2-974E-071D706BE075/90/49731f43/EventData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/alexey/dev/webinars/dotnext/src/DotNext.Domain/Booking.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5C2D0A65-A27E-43D2-974E-071D706BE075/67/4151295c/Position.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1BA52DC0-B103-422E-BA91-AD87A1AA9FE3/7/ServiceCollectionServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/715F7118-345E-49BA-AF83-9C5050542A58/b9/c7b4ae5d/IAsyncCursorSourceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/alexey/dev/webinars/dotnext/src/DotNext/Infrastructure/AggregateStore.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/alexey/dev/webinars/dotnext/src/DotNext.Lib/Aggregate.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6C8194BE-4CD2-4356-9703-C93D6F83F75B/e4/0d23aa2b/MongoClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6C8194BE-4CD2-4356-9703-C93D6F83F75B/aa/b09e092d/IMongoCollection`1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/src/DotNext.Lib/Class1.cs" />
-      <option value="$PROJECT_DIR$/src/DotNext/appsettings.json" />
-      <option value="$PROJECT_DIR$/src/DotNext.Lib/EventMetadata.cs" />
-      <option value="$PROJECT_DIR$/src/DotNext.Lib/Aggregate.cs" />
       <option value="$PROJECT_DIR$/src/DotNext.Domain/Class1.cs" />
       <option value="$PROJECT_DIR$/src/DotNext.Domain/DomainException.cs" />
       <option value="$PROJECT_DIR$/src/DotNext.Lib/IAggregateStore.cs" />
       <option value="$PROJECT_DIR$/src/DotNext/Application/ApplicationException.cs" />
       <option value="$PROJECT_DIR$/docker-compose.yml" />
-      <option value="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoCheckpointStore.cs" />
-      <option value="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoDefaults.cs" />
       <option value="$PROJECT_DIR$/src/DotNext.Lib/Document.cs" />
-      <option value="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoCollectionExtensions.cs" />
-      <option value="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoCollectionName.cs" />
-      <option value="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoDatabaseExtensions.cs" />
       <option value="$PROJECT_DIR$/src/DotNext/Infrastructure/EventDeserializer.cs" />
       <option value="$PROJECT_DIR$/src/DotNext.Lib/TypeMap.cs" />
       <option value="$PROJECT_DIR$/src/DotNext/Infrastructure/AggregateStore.cs" />
@@ -46,13 +62,31 @@
       <option value="$PROJECT_DIR$/src/DotNext.Domain/RoomId.cs" />
       <option value="$PROJECT_DIR$/src/DotNext.Domain/StayPeriod.cs" />
       <option value="$PROJECT_DIR$/src/DotNext/Application/FakeAvailabilityCheck.cs" />
-      <option value="$PROJECT_DIR$/src/DotNext/Startup.cs" />
       <option value="$PROJECT_DIR$/src/DotNext/Application/Commands/BookingCommands.cs" />
       <option value="$PROJECT_DIR$/src/DotNext/Application/MapEvents.cs" />
       <option value="$PROJECT_DIR$/src/DotNext/Application/BookingCommandService.cs" />
       <option value="$PROJECT_DIR$/src/DotNext/Api/BookingCommandApi.cs" />
-      <option value="$PROJECT_DIR$/src/DotNext.Domain/BookingEvents.cs" />
       <option value="$PROJECT_DIR$/src/DotNext.Domain/Booking.cs" />
+      <option value="$PROJECT_DIR$/src/DotNext/DotNext.csproj" />
+      <option value="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoCollectionExtensions.cs" />
+      <option value="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoCollectionName.cs" />
+      <option value="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoDatabaseExtensions.cs" />
+      <option value="$PROJECT_DIR$/src/DotNext.Lib/EventMetadata.cs" />
+      <option value="$PROJECT_DIR$/src/DotNext.Lib/Aggregate.cs" />
+      <option value="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/Checkpoint.cs" />
+      <option value="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoCheckpointStore.cs" />
+      <option value="$PROJECT_DIR$/src/DotNext.Lib/ICheckpointStore.cs" />
+      <option value="$PROJECT_DIR$/src/DotNext/Projections/GuestBookings.cs" />
+      <option value="$PROJECT_DIR$/src/DotNext.Lib/IProjection.cs" />
+      <option value="$PROJECT_DIR$/src/DotNext/appsettings.json" />
+      <option value="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoDefaults.cs" />
+      <option value="$PROJECT_DIR$/src/DotNext.Domain/BookingEvents.cs" />
+      <option value="$PROJECT_DIR$/src/DotNext.Lib/Checkpoint.cs" />
+      <option value="$PROJECT_DIR$/src/DotNext/Api/GuestBookingsQueries.cs" />
+      <option value="$PROJECT_DIR$/src/DotNext.Lib/IEventHandler.cs" />
+      <option value="$PROJECT_DIR$/src/DotNext/Projections/GuestBookingsProjection.cs" />
+      <option value="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoProjectionService.cs" />
+      <option value="$PROJECT_DIR$/src/DotNext/Startup.cs" />
     </changedPaths>
   </component>
   <component name="KubernetesApiPersistence">
@@ -67,6 +101,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mongo" />
     <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34975636" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -108,7 +143,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607148924343</updated>
       <workItem from="1607148926517" duration="2829000" />
-      <workItem from="1607153207744" duration="11261000" />
+      <workItem from="1607153207744" duration="19104000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1607153838928</created>
@@ -131,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607164367633</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added a new version of one event">
+      <created>1607164787275</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607164787275</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +196,7 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Working version with one event" />
     <MESSAGE value="Added some stuff and one more event" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some stuff and one more event" />
+    <MESSAGE value="Added a new version of one event" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a new version of one event" />
   </component>
 </project>

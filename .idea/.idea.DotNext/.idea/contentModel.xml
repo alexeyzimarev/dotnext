@@ -7,6 +7,7 @@
       <e p="src/dotnext" t="IncludeRecursive">
         <e p="Api" t="Include">
           <e p="BookingCommandApi.cs" t="Include" />
+          <e p="GuestBookingsQueries.cs" t="Include" />
         </e>
         <e p="Application" t="Include">
           <e p="ApplicationException.cs" t="Include" />
@@ -23,6 +24,14 @@
         <e p="Infrastructure" t="Include">
           <e p="AggregateStore.cs" t="Include" />
           <e p="EventDeserializer.cs" t="Include" />
+          <e p="MongoDb" t="Include">
+            <e p="MongoCheckpointStore.cs" t="Include" />
+            <e p="MongoCollectionExtensions.cs" t="Include" />
+            <e p="MongoCollectionName.cs" t="Include" />
+            <e p="MongoDatabaseExtensions.cs" t="Include" />
+            <e p="MongoDefaults.cs" t="Include" />
+            <e p="MongoProjectionService.cs" t="Include" />
+          </e>
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -32,6 +41,10 @@
           </e>
         </e>
         <e p="Program.cs" t="Include" />
+        <e p="Projections" t="Include">
+          <e p="GuestBookings.cs" t="Include" />
+          <e p="GuestBookingsProjection.cs" t="Include" />
+        </e>
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
@@ -57,10 +70,13 @@
       <e p="src/DotNext.Lib" t="IncludeRecursive">
         <e p="Aggregate.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Checkpoint.cs" t="Include" />
         <e p="Document.cs" t="Include" />
         <e p="DotNext.Lib.csproj" t="IncludeRecursive" />
         <e p="EventMetadata.cs" t="Include" />
         <e p="IAggregateStore.cs" t="Include" />
+        <e p="ICheckpointStore.cs" t="Include" />
+        <e p="IEventHandler.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="net5.0" t="Include">

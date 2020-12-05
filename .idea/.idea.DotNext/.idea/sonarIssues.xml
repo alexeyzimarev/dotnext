@@ -53,6 +53,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext.Lib/Checkpoint.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/DotNext.Lib/Document.cs">
           <value>
             <set />
@@ -68,12 +73,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext.Lib/ICheckpointStore.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext.Lib/IEventHandler.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext.Lib/IProjection.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/DotNext.Lib/TypeMap.cs">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/DotNext/Api/BookingCommandApi.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext/Api/GuestBookingsQueries.cs">
           <value>
             <set />
           </value>
@@ -103,12 +128,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext/DotNext.csproj">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/DotNext/Infrastructure/AggregateStore.cs">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/DotNext/Infrastructure/EventDeserializer.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/Checkpoint.cs">
           <value>
             <set />
           </value>
@@ -138,12 +173,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoProjectionService.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext/Projections/GuestBookings.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext/Projections/GuestBookingsProjection.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/DotNext/Startup.cs">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/DotNext/appsettings.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/dummy.js">
           <value>
             <set />
           </value>

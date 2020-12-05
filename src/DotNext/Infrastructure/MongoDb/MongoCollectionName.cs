@@ -20,7 +20,7 @@ namespace DotNext.Infrastructure.MongoDb {
         public static MongoCollectionName For<T>(string prefix = null) => For(typeof(T), prefix);
 
         public static MongoCollectionName For(Type type, string prefix = null) {
-            var collectionName = type.Name.FromPascalToCamelCase();
+            var collectionName = type.Name;
 
             var suffixes = new[] {"Document", "Entity", "View", "Projection", "ProjectionDocument", "ProjectionEntity"};
 

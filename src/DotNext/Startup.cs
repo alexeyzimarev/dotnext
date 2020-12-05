@@ -2,7 +2,9 @@ using System;
 using DotNext.Application;
 using DotNext.Domain;
 using DotNext.Infrastructure;
+using DotNext.Infrastructure.MongoDb;
 using DotNext.Lib;
+using DotNext.Projections;
 using EventStore.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,7 +12,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MongoDB.Driver;
 using Serilog;
+using MongoDefaults = DotNext.Infrastructure.MongoDb.MongoDefaults;
 
 namespace DotNext {
     public class Startup {
@@ -21,7 +25,8 @@ namespace DotNext {
         public void ConfigureServices(IServiceCollection services) {
             AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
             EventTypeMapper.MapEventTypes();
-            
+            MongoDefaults.RegisterConventions();
+
             services.AddControllers();
 
             services.AddSingleton(
@@ -31,9 +36,28 @@ namespace DotNext {
                         ctx.GetService<ILoggerFactory>()
                     )
             );
+
+            services.AddSingleton(
+                ConfigureMongo(
+                    Configuration["MongoDb:ConnectionString"],
+                    Configuration["MongoDb:Database"]
+                )
+            );
             services.AddSingleton<IAggregateStore, AggregateStore>();
             services.AddSingleton<BookingCommandService>();
             services.AddSingleton<IAvailabilityCheck, FakeAvailabilityCheck>();
+            services.AddSingleton<ICheckpointStore, MongoCheckpointStore>();
+            services.AddSingleton<GuestBookingsProjection>();
+
+            services.AddHostedService(
+                ctx =>
+                    new MongoProjectionService(
+                        ctx.GetService<EventStoreClient>(),
+                        ctx.GetService<ICheckpointStore>(),
+                        "guestBookings",
+                        ctx.GetService<GuestBookingsProjection>()
+                    )
+            );
 
             services.AddSwaggerGen(
                 c
@@ -61,6 +85,11 @@ namespace DotNext {
             settings.ConnectionName = "bookingApp";
             settings.LoggerFactory  = loggerFactory;
             return new EventStoreClient(settings);
+        }
+
+        static IMongoDatabase ConfigureMongo(string connectionString, string database) {
+            var settings = MongoClientSettings.FromConnectionString(connectionString);
+            return new MongoClient(connectionString).GetDatabase(database);
         }
     }
 }
