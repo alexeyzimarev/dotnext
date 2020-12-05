@@ -8,6 +8,7 @@ namespace DotNext.Domain {
         string         _id;
         DateTimeOffset _checkIn;
         DateTimeOffset _checkOut;
+        string         _guestId;
 
         public override string GetId() => _id;
 
@@ -50,10 +51,16 @@ namespace DotNext.Domain {
                     _id       = e.BookingId;
                     _checkIn  = e.CheckIn;
                     _checkOut = e.CheckOut;
+                    _guestId  = e.GuestId;
                     break;
                 }
                 case V1.BookingExtended e: {
                     _checkOut = e.CheckOut;
+                    break;
+                }
+                case V2.BookingExtended e: {
+                    _checkOut = e.CheckOut;
+                    _guestId  = e.GuestId;
                     break;
                 }
             }

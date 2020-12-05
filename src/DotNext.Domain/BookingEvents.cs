@@ -20,5 +20,15 @@ namespace DotNext.Domain {
                 public DateTimeOffset ExtendedAt { get; init; }
             }
         }
+        
+        public static class V2 {
+            public record BookingExtended {
+                public string         BookingId  { get; init; }
+                public string         GuestId    { get; set; }
+                public DateTimeOffset CheckOut   { get; init; }
+                public string         ExtendedBy { get; init; }
+                public DateTimeOffset ExtendedAt { get; init; }
+            }
+        }
     }
 }
