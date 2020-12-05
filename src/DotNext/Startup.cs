@@ -1,5 +1,6 @@
 using System;
 using DotNext.Application;
+using DotNext.Domain;
 using DotNext.Infrastructure;
 using DotNext.Lib;
 using EventStore.Client;
@@ -19,6 +20,7 @@ namespace DotNext {
 
         public void ConfigureServices(IServiceCollection services) {
             AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
+            EventTypeMapper.MapEventTypes();
             
             services.AddControllers();
 
@@ -31,6 +33,7 @@ namespace DotNext {
             );
             services.AddSingleton<IAggregateStore, AggregateStore>();
             services.AddSingleton<BookingCommandService>();
+            services.AddSingleton<IAvailabilityCheck, FakeAvailabilityCheck>();
 
             services.AddSwaggerGen(
                 c

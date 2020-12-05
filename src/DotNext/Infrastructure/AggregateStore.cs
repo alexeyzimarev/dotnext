@@ -32,9 +32,9 @@ namespace DotNext.Infrastructure {
 
                 return new EventData(
                     Uuid.NewUuid(),
-                    e.GetType().Name,
-                    JsonSerializer.SerializeToUtf8Bytes(meta),
-                    JsonSerializer.SerializeToUtf8Bytes(e)
+                    TypeMap.GetTypeName(e),
+                    JsonSerializer.SerializeToUtf8Bytes(e),
+                    JsonSerializer.SerializeToUtf8Bytes(meta)
                 );
             }
         }

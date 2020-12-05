@@ -9,6 +9,15 @@ namespace DotNext.Domain {
                 public string         RoomId    { get; init; }
                 public DateTimeOffset CheckIn   { get; init; }
                 public DateTimeOffset CheckOut  { get; init; }
+                public string         BookedBy  { get; init; }
+                public DateTimeOffset BookedAt  { get; init; }
+            }
+
+            public record BookingExtended {
+                public string         BookingId { get; init; }
+                public DateTimeOffset CheckOut  { get; init; }
+                public string         ExtendedBy { get; init; }
+                public DateTimeOffset ExtendedAt { get; init; }
             }
         }
     }

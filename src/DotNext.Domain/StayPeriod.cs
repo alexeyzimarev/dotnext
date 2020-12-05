@@ -10,5 +10,7 @@ namespace DotNext.Domain {
             CheckIn  = checkIn;
             CheckOut = checkOut;
         }
+
+        public override string ToString() => $"Period from {CheckIn.Date} to {CheckOut.Date}";
     }
 }

@@ -10,6 +10,11 @@ namespace DotNext.Application.Commands {
                 public DateTimeOffset CheckIn   { get; init; }
                 public DateTimeOffset CheckOut  { get; init; }
             }
+
+            public record ExtendBooking {
+                public string         BookingId  { get; init; }
+                public DateTimeOffset CheckOut   { get; init; }
+            }
         }
     }
 }

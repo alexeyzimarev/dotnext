@@ -14,6 +14,8 @@
           <e p="Commands" t="Include">
             <e p="BookingCommands.cs" t="Include" />
           </e>
+          <e p="FakeAvailabilityCheck.cs" t="Include" />
+          <e p="MapEvents.cs" t="Include" />
         </e>
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
@@ -41,6 +43,7 @@
         <e p="BookingEvents.cs" t="Include" />
         <e p="DomainException.cs" t="Include" />
         <e p="DotNext.Domain.csproj" t="IncludeRecursive" />
+        <e p="IAvailabilityCheck.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="net5.0" t="Include">
@@ -54,6 +57,7 @@
       <e p="src/DotNext.Lib" t="IncludeRecursive">
         <e p="Aggregate.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Document.cs" t="Include" />
         <e p="DotNext.Lib.csproj" t="IncludeRecursive" />
         <e p="EventMetadata.cs" t="Include" />
         <e p="IAggregateStore.cs" t="Include" />
@@ -64,6 +68,7 @@
             </e>
           </e>
         </e>
+        <e p="TypeMap.cs" t="Include" />
       </e>
     </e>
     <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />

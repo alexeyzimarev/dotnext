@@ -8,6 +8,11 @@
             <set />
           </value>
         </entry>
+        <entry key="/Immediate Window">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/docker-compose.yml">
           <value>
             <set />
@@ -28,6 +33,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext.Domain/IAvailabilityCheck.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/DotNext.Domain/RoomId.cs">
           <value>
             <set />
@@ -43,12 +53,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext.Lib/Document.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/DotNext.Lib/EventMetadata.cs">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/DotNext.Lib/IAggregateStore.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext.Lib/TypeMap.cs">
           <value>
             <set />
           </value>
@@ -73,12 +93,47 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext/Application/FakeAvailabilityCheck.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext/Application/MapEvents.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/DotNext/Infrastructure/AggregateStore.cs">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/DotNext/Infrastructure/EventDeserializer.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoCheckpointStore.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoCollectionExtensions.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoCollectionName.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoDatabaseExtensions.cs">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/DotNext/Infrastructure/MongoDb/MongoDefaults.cs">
           <value>
             <set />
           </value>

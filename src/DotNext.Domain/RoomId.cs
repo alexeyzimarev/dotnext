@@ -7,5 +7,7 @@ namespace DotNext.Domain {
 
             Value = value;
         }
+
+        public override string ToString() => Value;
     }
 }

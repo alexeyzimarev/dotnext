@@ -12,5 +12,9 @@ namespace DotNext.Api {
 
         [HttpPost]
         public Task BookRoom([FromBody] V1.BookRoom command) => _service.Handle(command);
+        
+        [HttpPost]
+        [Route("extend")]
+        public Task ExtendStay([FromBody] V1.ExtendBooking command) => _service.Handle(command);
     }
 }
